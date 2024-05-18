@@ -4,6 +4,15 @@ require("plugins.nvim-cmp")
 require("plugins.nvim-lspconfig")
 require("plugins.github-copilot")
 require("plugins.lazygit")
+require("neo-tree").setup({
+  filesystem = {
+    filtered_items = {
+      visible = true, -- これを false から true に設定
+      hide_dotfiles = false, -- 隠しファイルを表示するためにはこのオプションを false に設定
+      hide_gitignored = false, -- Gitで無視されているファイルも表示する場合はこのオプションを false に設定
+    },
+  },
+})
 
 -- set clipboard to unnamedplus --
 vim.opt.clipboard = "unnamedplus"
