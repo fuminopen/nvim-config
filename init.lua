@@ -4,6 +4,7 @@ require("plugins.nvim-cmp")
 require("plugins.nvim-lspconfig")
 require("plugins.github-copilot")
 require("plugins.toggleterm")
+require("plugins.winresizer")
 
 require("neo-tree").setup({
   filesystem = {
