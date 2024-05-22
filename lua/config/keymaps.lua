@@ -66,13 +66,10 @@ keymap("x", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- Delete current buffer without closing window --
-keymap("n", "<leader>q", ":bd<CR>", opts)
+keymap("n", "<leader>w", ":bd<CR>", opts)
 
--- Terminal --
--- Better terminal navigation
--- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
--- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
--- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
--- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- Delete all buffer without closing window --
+keymap("n", "<leader>W", ":bufdo bd<CR>", opts)
 
+-- Toggle terminal
 keymap("n", "<leader>j", ":ToggleTerm<CR>", opts)
