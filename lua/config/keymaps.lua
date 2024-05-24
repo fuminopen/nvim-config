@@ -76,3 +76,14 @@ keymap("n", "<leader>q", ":bd<CR>", opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 keymap("n", "<leader>j", ":ToggleTerm<CR>", opts)
+
+-- 定義にジャンプするためのキーマッピング
+vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+
+-- Telescopeを使ったリポジトリ全体の検索
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>p",
+  "<cmd>lua require('telescope.builtin').live_grep()<CR>",
+  { noremap = true, silent = true }
+)
