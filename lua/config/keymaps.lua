@@ -68,6 +68,9 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 -- Delete current buffer without closing window --
 keymap("n", "<leader>w", ":bd<CR>", opts)
 
+-- Delete current buffer without closing window --
+keymap("n", "<leader>W", ":%bd<CR>", opts)
+
 -- Terminal --
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
