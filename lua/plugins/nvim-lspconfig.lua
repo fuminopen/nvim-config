@@ -99,7 +99,7 @@ return {
       end
 
       -- setup autoformat
-      LazyVim.format.register(LazyVim.lsp.formatter())
+      -- LazyVim.format.register(LazyVim.lsp.formatter())
 
       -- setup keymaps
       LazyVim.lsp.on_attach(function(client, buffer)
