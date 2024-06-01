@@ -74,6 +74,8 @@ keymap("n", "<leader>W", ":bufdo bd<CR>", opts)
 -- Toggle terminal
 keymap("n", "<leader>j", ":ToggleTerm<CR>", opts)
 
+keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", opts)
+
 -- 定義にジャンプするためのキーマッピング
 vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
 
