@@ -74,15 +74,11 @@ keymap("n", "<leader>W", ":bufdo bd<CR>", opts)
 -- Toggle terminal
 keymap("n", "<leader>j", ":ToggleTerm<CR>", opts)
 
+-- lazygit
 keymap("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", opts)
 
 -- 定義にジャンプするためのキーマッピング
-vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
 -- Telescopeを使ったリポジトリ全体の検索
-vim.api.nvim_set_keymap(
-  "n",
-  "<leader>p",
-  "<cmd>lua require('telescope.builtin').live_grep()<CR>",
-  { noremap = true, silent = true }
-)
+keymap("n", "<leader>p", "<cmd>lua require('telescope.builtin').live_grep()<CR>", opts)
