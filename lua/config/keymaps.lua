@@ -217,6 +217,3 @@ map("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", opts)
 
 -- 定義にジャンプするためのキーマッピング
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-
--- Telescopeを使ったリポジトリ全体の検索
-map("n", "<leader>p", "<cmd>lua require('telescope.builtin').live_grep()<CR>", opts)
