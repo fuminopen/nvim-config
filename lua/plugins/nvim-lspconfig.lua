@@ -101,6 +101,59 @@ return {
               },
             },
           },
+          html = {
+            settings = {
+              html = {
+                suggest = {
+                  completion = {
+                    enabled = true,
+                  },
+                },
+              },
+            },
+          },
+          cssls = {
+            settings = {
+              css = {
+                validate = true,
+              },
+              scss = {
+                validate = true,
+              },
+              less = {
+                validate = true,
+              },
+            },
+          },
+          volar = {
+            settings = {
+              vetur = {
+                completion = {
+                  autoImport = true,
+                  tagCasing = "kebab",
+                },
+                format = {
+                  defaultFormatter = {
+                    js = "prettier",
+                    ts = "prettier",
+                  },
+                },
+              },
+            },
+          },
+          emmet_ls = {
+            settings = {
+              emmet = {
+                includeLanguages = {
+                  html = "html",
+                  css = "css",
+                  javascript = "javascript",
+                  typescript = "typescript",
+                  vue = "vue",
+                },
+              },
+            },
+          },
         },
         -- you can do any additional lsp server setup here
         -- return true if you don't want this server to be setup with lspconfig
