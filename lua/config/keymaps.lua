@@ -217,3 +217,6 @@ map("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", opts)
 
 -- 定義にジャンプするためのキーマッピング
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+
+-- カーソル下の単語を定義にジャンプするためのキーマッピング
+map("n", "<leader>*", "*''cgn", opts)
