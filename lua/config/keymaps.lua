@@ -204,10 +204,10 @@ map("v", ">", ">gv^", opts)
 map("v", "p", '"_dP', opts)
 
 -- Delete current buffer without closing window --
-map("n", "<leader>w", ":bd<CR>", opts)
+map("n", "<C-w>", ":bd<CR>", opts)
 
 -- Delete all buffer without closing window --
-map("n", "<leader>W", ":bufdo bd<CR>", opts)
+map("n", "<leader>w", ":bufdo bd<CR>", opts)
 
 -- Toggle terminal
 map("n", "<leader>j", ":ToggleTerm<CR>", opts)
