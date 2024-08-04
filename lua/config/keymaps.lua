@@ -220,3 +220,12 @@ map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
 -- カーソル下の単語を定義にジャンプするためのキーマッピング
 map("n", "<leader>*", "*''cgn", opts)
+
+-- Altとhjklで矢印キーの代わりにする -- 
+map("n", "<A-h>", "<Left>", opts)
+map("n", "<A-j>", "<Down>", opts)
+map("n", "<A-k>", "<Up>", opts)
+map("n", "<A-l>", "<Right>", opts)
+
+-- \は_に変更
+map("i", "\\", "_", opts)
