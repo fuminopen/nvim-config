@@ -50,6 +50,9 @@ return {
           lua = { "stylua" },
           fish = { "fish_indent" },
           sh = { "shfmt" },
+          vue = { "eslint_d" }, -- VueファイルのフォーマットにESLintを使用
+          javascript = { "eslint_d" },
+          typescript = { "eslint_d" },
         },
         -- The options you set here will be merged with the builtin formatters.
         -- You can also define any custom formatters here.
