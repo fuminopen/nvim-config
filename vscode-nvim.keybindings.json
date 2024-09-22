@@ -1,0 +1,157 @@
+[
+  {
+    "key": "ctrl+j",
+    "command": "-extension.vim_ctrl+j",
+    "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-extension.vim_ctrl+w",
+    "when": "editorTextFocus && vim.active && vim.use<C-w> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+t",
+    "command": "-extension.vim_ctrl+t",
+    "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-extension.vim_ctrl+b",
+    "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "ctrl+shift+e",
+    "command": "-workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysInsert.w && neovim.init && neovim.mode == 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.w && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "key": "ctrl+w",
+    "command": "-vscode-neovim.send-cmdline",
+    "when": "neovim.init && neovim.mode == 'cmdline'"
+  },
+  {
+    "key": "ctrl+w unknown",
+    "command": "-workbench.action.increaseViewWidth",
+    "when": "!editorTextFocus && !isAuxiliaryWindowFocusedContext && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w unknown",
+    "command": "-workbench.action.increaseViewHeight",
+    "when": "!editorTextFocus && !isAuxiliaryWindowFocusedContext && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w unknown",
+    "command": "-workbench.action.decreaseViewWidth",
+    "when": "!editorTextFocus && !isAuxiliaryWindowFocusedContext && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w oem_minus",
+    "command": "-workbench.action.decreaseViewHeight",
+    "when": "!editorTextFocus && !isAuxiliaryWindowFocusedContext && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w q",
+    "command": "-workbench.action.closeActiveEditor",
+    "when": "!editorTextFocus && !filesExplorerFocus && !searchViewletFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w ctrl+w",
+    "command": "-workbench.action.focusNextGroup",
+    "when": "!editorTextFocus && !filesExplorerFocus && !inSearchEditor && !replaceInputBoxFocus && !searchViewletFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w up",
+    "command": "-workbench.action.navigateUp",
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w k",
+    "command": "-workbench.action.navigateUp",
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w down",
+    "command": "-workbench.action.navigateDown",
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w j",
+    "command": "-workbench.action.navigateDown",
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w left",
+    "command": "-workbench.action.navigateLeft",
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w h",
+    "command": "-workbench.action.navigateLeft",
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w right",
+    "command": "-workbench.action.navigateRight",
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w l",
+    "command": "-workbench.action.navigateRight",
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w oem_plus",
+    "command": "-workbench.action.evenEditorWidths",
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w s",
+    "command": "-workbench.action.splitEditorDown",
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w v",
+    "command": "-workbench.action.splitEditorRight",
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+w unknown",
+    "command": "-workbench.action.toggleEditorWidths",
+    "when": "!editorTextFocus && !terminalFocus && neovim.mode != 'cmdline'"
+  },
+  {
+    "key": "ctrl+r ctrl+j",
+    "command": "-vscode-neovim.send-cmdline",
+    "when": "neovim.init && neovim.mode == 'cmdline'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-vscode-neovim.send-cmdline",
+    "when": "neovim.init && neovim.mode == 'cmdline'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal.j && neovim.init && neovim.mode != 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "-vscode-neovim.send",
+    "when": "editorTextFocus && neovim.ctrlKeysInsert.j && neovim.init && neovim.mode == 'insert' && editorLangId not in 'neovim.editorLangIdExclusions'"
+  }
+]
