@@ -33,9 +33,6 @@ map("n", "<C-w>", ":bd<CR>", opts)
 -- Delete all buffer without closing window --
 map("n", "<leader>w", ":bufdo bd<CR>", opts)
 
--- Toggle terminal
-map("n", "<leader>j", ":ToggleTerm<CR>", opts)
-
 -- lazygit
 map("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", opts)
 
