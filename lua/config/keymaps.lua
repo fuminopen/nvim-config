@@ -14,11 +14,11 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
+local opts = { noremap = true, silent = true }
+
 -----------------------------------------------------------
 -- Custom Keymaps
 -----------------------------------------------------------
-
-local opts = { noremap = true, silent = true }
 
 -- Stay in indent mode
 map("v", "<", "<gv^", opts)
@@ -33,9 +33,6 @@ map("n", "<C-w>", ":bd<CR>", opts)
 -- Delete all buffer without closing window --
 map("n", "<leader>w", ":bufdo bd<CR>", opts)
 
--- lazygit
-map("n", "<leader>g", "<cmd>lua _lazygit_toggle()<CR>", opts)
-
 -- 定義にジャンプするためのキーマッピング
 map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 
@@ -44,3 +41,21 @@ map("n", "<leader>*", "*''cgn", opts)
 
 -- \は_に変更
 map("i", "\\", "_", opts)
+
+-----------------------------------------------------------
+-- lazygitをToggleTerm経由で開くように設定
+-----------------------------------------------------------
+
+local GitTerminal = require("toggleterm.terminal").Terminal
+local lazygit = GitTerminal:new({
+  cmd = "lazygit",
+  direction = "float",
+  hidden = true,
+})
+
+function LazygitToggle()
+  lazygit:toggle()
+end
+
+-- lazygit
+map("n", "<leader>g", "<cmd>lua LazygitToggle()<CR>", opts)
