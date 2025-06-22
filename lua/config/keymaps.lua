@@ -27,15 +27,6 @@ map("v", ">", ">gv^", opts)
 -- ヴィジュアルモードでペーストした際レジスタに対象の文字を保存しない
 map("v", "p", '"_dP', opts)
 
--- Delete current buffer without closing window --
-map("n", "<C-w>", ":bd<CR>", opts)
-
--- Delete all buffer without closing window --
-map("n", "<leader>w", ":bufdo bd<CR>", opts)
-
--- 定義にジャンプするためのキーマッピング
-map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-
 -- カーソル下の単語を定義にジャンプするためのキーマッピング
 map("n", "<leader>*", "*''cgn", opts)
 
