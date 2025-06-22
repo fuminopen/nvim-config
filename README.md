@@ -1,4 +1,141 @@
-# 💤 LazyVim
+# 個人用Neovim設定 (LazyVim)
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
-Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
+[LazyVim](https://github.com/LazyVim/LazyVim)をベースにした個人用のNeovim設定です。このREADMEではキーバインドや基本的な使い方を解説します。
+
+## インストール方法
+
+1. このリポジトリをクローンします：
+```bash
+git clone https://github.com/yourusername/nvim-config.git ~/.config/nvim
+```
+
+2. Neovimを起動すると、必要なプラグインが自動的にインストールされます。
+
+## 主な機能
+
+- [lazy.nvim](https://github.com/folke/lazy.nvim)によるプラグイン管理
+- [LazyVim](https://github.com/LazyVim/LazyVim)をベースとした設定
+- [ToggleTerm](https://github.com/akinsho/toggleterm.nvim)による統合ターミナル
+- lazygitのサポート
+
+## 基本的な使い方
+
+### バッファ操作
+
+バッファはファイルを編集するための作業領域です。
+
+| キーバインド | 説明 |
+|------------|------|
+| `<leader>bd` または `<leader>bD` | 現在のバッファを閉じる |
+| `<leader>c` | 現在のバッファを閉じる |
+| `<leader>bb` | バッファの切り替え |
+| `<leader>bc` | 他のバッファをすべて閉じる（現在のバッファを除く） |
+| `H` | 前のバッファへ移動 |
+| `L` | 次のバッファへ移動 |
+| `<leader>bp` | バッファをピン留め |
+
+### ウィンドウ操作
+
+ウィンドウはバッファを表示する画面上の領域です。
+
+| キーバインド | 説明 |
+|------------|------|
+| `<C-w>q` または `:q` | ウィンドウを閉じる |
+| `<C-w>c` | 現在のウィンドウを閉じる |
+| `<C-h>` | 左のウィンドウへ移動 |
+| `<C-j>` | 下のウィンドウへ移動 |
+| `<C-k>` | 上のウィンドウへ移動 |
+| `<C-l>` | 右のウィンドウへ移動 |
+| `<leader>w-` | ウィンドウを水平分割 |
+| `<leader>w\|` | ウィンドウを垂直分割 |
+| `<leader>ww` | 他のウィンドウへ移動 |
+
+### タブ操作
+
+タブはウィンドウのグループを切り替えるためのものです。
+
+| キーバインド | 説明 |
+|------------|------|
+| `<leader><tab>l` | 最後に使用したタブへ移動 |
+| `<leader><tab>n` | 新しいタブを作成 |
+| `<leader><tab>]` | 次のタブへ移動 |
+| `<leader><tab>[` | 前のタブへ移動 |
+| `<leader><tab>d` | タブを閉じる |
+
+### ファイル操作
+
+| キーバインド | 説明 |
+|------------|------|
+| `<leader>ff` | ファイル検索 |
+| `<leader>fr` | 最近使用したファイルを開く |
+| `<leader>fn` | 新しいファイルを作成 |
+| `<leader>fs` | ファイル保存 |
+
+### 検索機能
+
+| キーバインド | 説明 |
+|------------|------|
+| `<leader>/` | バッファ内検索 |
+| `<leader>sg` | プロジェクト全体をgrep検索 |
+| `<leader>sb` | バッファ検索 |
+| `<leader>ss` | 現在のバッファで単語検索 |
+| `<leader>sr` | 置換 |
+
+### LSP関連機能
+
+| キーバインド | 説明 |
+|------------|------|
+| `K` | ホバー情報表示 |
+| `gd` | 定義へ移動 |
+| `gD` | 宣言へ移動 |
+| `gr` | 参照を検索 |
+| `gi` | 実装へ移動 |
+| `<leader>ca` | コードアクション |
+| `<leader>cr` | 名前変更 |
+| `<leader>cf` | コードフォーマット |
+| `<leader>cd` | 診断情報表示 |
+
+### ターミナル操作
+
+| キーバインド | 説明 |
+|------------|------|
+| `<C-n>` | フローティングターミナルを開く/閉じる |
+| `<leader>g` | lazygitをフローティングウィンドウで開く |
+
+## カスタムキーマップ
+
+カスタムで追加したキーマップは以下の通りです：
+
+| キーバインド | モード | 説明 |
+|------------|-------|------|
+| `<` / `>` | Visual | インデント後も選択を維持 |
+| `p` | Visual | ペースト時にレジスタに対象文字を保存しない |
+| `<leader>*` | Normal | カーソル下の単語の定義にジャンプ |
+| `\` | Insert | アンダースコア（_）を入力 |
+
+## コマンド一覧
+
+| コマンド | 説明 |
+|---------|------|
+| `:Lazy` | プラグイン管理画面を開く |
+| `:Lazy update` | プラグインを更新 |
+| `:Lazy clean` | 不要なプラグインを削除 |
+| `:lua vim.lsp.buf.format()` | 現在のバッファをフォーマット |
+| `:LspInfo` | LSPの状態を確認 |
+| `:LspLog` | LSPのログを表示 |
+
+## ファイル構造
+
+- `init.lua`: 設定のエントリポイント
+- `lua/config/`: 基本設定ファイル
+  - `lazy.lua`: プラグイン管理
+  - `options.lua`: Neovimの基本設定
+  - `keymaps.lua`: キーマッピング
+  - `autocmds.lua`: 自動コマンド
+- `lua/plugins/`: プラグイン設定ファイル
+
+## 注意事項
+
+- `<leader>`キーはデフォルトでスペースキー（`<Space>`）に設定されています
+- このREADMEに記載されていないキーマップについては、`:Telescope keymaps`で確認できます
+- `:checkhealth`コマンドで、設定の健全性を確認できます
