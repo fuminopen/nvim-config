@@ -5,6 +5,7 @@ return {
       "nvim-lua/plenary.nvim",
       "saghen/blink.cmp",
     },
+    event = "VeryLazy",
     config = function()
       require("minuet").setup({
         provider = "claude",
@@ -17,20 +18,19 @@ return {
         blink = {
           enable_auto_complete = true, -- 自動補完を有効化
         },
+        debounce = 200,
+        throttle = 500,
       })
     end,
   },
   { "nvim-lua/plenary.nvim" },
   {
     "saghen/blink.cmp",
-    event = "InsertEnter",
     config = function()
       require("blink-cmp").setup({
         keymap = {
           -- Manually invoke minuet completion.
           ["<A-y>"] = require("minuet").make_blink_map(),
-          ["<Tab>"] = { "select_and_accept" },
-          ["<CR>"] = { "accept", "fallback" },
         },
         sources = {
           -- Enable minuet for autocomplete
