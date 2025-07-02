@@ -31,6 +31,16 @@ return {
         keymap = {
           -- Manually invoke minuet completion.
           ["<A-y>"] = require("minuet").make_blink_map(),
+          -- Enterキーで補完を確定
+          ["<CR>"] = { "accept", "fallback" },
+          -- Tabキーで次の候補を選択
+          ["<Tab>"] = { "select_next", "fallback" },
+          -- Shift+Tabキーで前の候補を選択
+          ["<S-Tab>"] = { "select_prev", "fallback" },
+          -- Ctrl+Spaceで補完を手動で開く
+          ["<C-Space>"] = { "show", "show_documentation", "hide_documentation" },
+          -- Escで補完を閉じる
+          ["<C-e>"] = { "hide" },
         },
         sources = {
           -- Enable minuet for autocomplete
